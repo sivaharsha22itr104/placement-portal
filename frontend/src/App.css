@@ -1,0 +1,537 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #e0f2fe, #f8fafc);
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  background-color: #1e3a8a;
+  padding: 15px 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.form-card {
+  max-width: 420px;
+  margin: 40px auto;
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.form-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: #f8fafc;
+}
+
+.form-card input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: white;
+}
+
+.btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: #dc2626;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+.btn-success {
+  background-color: #16a34a;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 200px;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.stat-box h3 {
+  margin: 0 0 10px;
+  color: #1e3a8a;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.home-box {
+  text-align: center;
+  padding: 60px 20px;
+  width: 70%;
+  margin: 50px auto;
+}
+
+.home-box h1 {
+  font-size: 48px;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.home-box p {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.hero-btn.secondary {
+  background: white;
+  color: #1e3a8a;
+  border: 2px solid #1e3a8a;
+}
+
+.hero-btn.secondary:hover {
+  background: #eff6ff;
+}
+
+.status-applied {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.status-shortlisted {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.status-selected {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .home-box {
+    width: 100%;
+    padding: 40px 12px;
+    margin: 20px auto;
+  }
+
+  .home-box h1 {
+    font-size: 34px;
+  }
+
+  .home-box p {
+    font-size: 16px;
+  }
+
+  .form-card {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 18px;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .stat-box {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .home-box h1 {
+    font-size: 28px;
+  }
+
+  .form-card input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+.role-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.role-card {
+  width: 220px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.role-card:hover {
+  transform: translateY(-6px);
+  background: #eff6ff;
+}
+
+.role-card h2 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.role-card p {
+  font-size: 14px;
+  color: #555;
+}
+.auth-card {
+  max-width: 460px;
+  margin: 60px auto;
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-title {
+  color: #1e3a8a;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: #64748b;
+  margin-bottom: 22px;
+  font-size: 15px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: #f8fafc;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: white;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.muted-link {
+  color: #2563eb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.bottom-text {
+  text-align: center;
+  margin-top: 18px;
+  color: #475569;
+}
+
+.bottom-text a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-card.register-wide {
+  max-width: 520px;
+}
+.dashboard-card {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.student-info p {
+  margin: 6px 0;
+}
+
+.application-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.application-card {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+
+.status-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+}
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.action-btn:hover {
+  background: #1d4ed8;
+}
+
+.action-btn.secondary {
+  background: #64748b;
+}
+
+.action-btn.secondary:hover {
+  background: #475569;
+}
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.admin-form {
+  display: grid;
+  gap: 12px;
+}
+
+.action-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.action-btn:hover {
+  background: #1d4ed8;
+}
+
+.action-btn.secondary {
+  background: #64748b;
+}
+
+.action-btn.secondary:hover {
+  background: #475569;
+}
