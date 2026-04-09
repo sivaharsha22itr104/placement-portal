@@ -20,7 +20,7 @@ import {
 function AdminDashboard() {
   const navigate = useNavigate();
 
-  const [companies] = useState([]);
+  const [companies, setCompanies] = useState([]);
   const [applications, setApplications] = useState([]);
 
   const [formData, setFormData] = useState({
@@ -41,18 +41,19 @@ function AdminDashboard() {
 
   const fetchCompanies = async () => {
     try {
-      await axios.get(`${API_BASE_URL}/api/companies`);
+      const res = await axios.get(`${API_BASE_URL}/api/companies`);
+      setCompanies(res.data.companies || []);
     } catch (error) {
-      console.error(error);
+      console.error("Companies fetch error:", error);
     }
   };
 
   const fetchApplications = async () => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/api/companies`);
+      const res = await axios.get(`${API_BASE_URL}/api/applications`);
       setApplications(res.data.applications || []);
     } catch (error) {
-      console.error(error);
+      console.error("Applications fetch error:", error);
     }
   };
 
@@ -95,7 +96,9 @@ function AdminDashboard() {
 
   const updateStatus = async (applicationId, status) => {
     try {
-      await axios.put(`${API_BASE_URL}/api/applications/status/${applicationId}`, { status });
+      await axios.put(`${API_BASE_URL}/api/applications/status/${applicationId}`, {
+        status,
+      });
       fetchApplications();
     } catch (error) {
       alert("Error updating status");
@@ -150,10 +153,11 @@ function AdminDashboard() {
   return (
     <div className="container">
       <div className="top-actions">
-
-        <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button>
+        <div style={{ marginLeft: "auto" }}>
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
       </div>
 
       <h2 className="page-title">Admin Dashboard</h2>
@@ -242,7 +246,7 @@ function AdminDashboard() {
               <XAxis dataKey="name" />
               <YAxis allowDecimals={false} />
               <Tooltip />
-              <Bar dataKey="count" />
+              <Bar dataKey="count" fill="#2563eb" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
