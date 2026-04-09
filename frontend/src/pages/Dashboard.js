@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config";
 function Dashboard() {
   const [applications, setApplications] = useState([]);
   const student = JSON.parse(localStorage.getItem("student"));
@@ -14,9 +14,7 @@ function Dashboard() {
 
   const fetchApplications = async () => {
     try {
-      const res = await axios.get(
-        `http://localhost:5000/api/applications/student/${student._id || student.id}`
-      );
+      const res = await axios.get(`${API_BASE_URL}/api/applications/student/${student._id || student.id}`);
       setApplications(res.data.applications);
     } catch (error) {
       console.log(error);

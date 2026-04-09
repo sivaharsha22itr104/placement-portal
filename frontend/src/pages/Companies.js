@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config";
 function Companies() {
   const [companies, setCompanies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ function Companies() {
 
   const fetchCompanies = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/companies");
+      const res = await axios.get(`${API_BASE_URL}/api/companies`);
       setCompanies(res.data.companies || []);
     } catch (error) {
       alert(error.response?.data?.message || "Could not load companies");
@@ -31,7 +31,7 @@ function Companies() {
         return;
       }
 
-      await axios.post("http://localhost:5000/api/applications/apply", {
+      await await axios.post(`${API_BASE_URL}/api/applications/apply`,{
         studentId: student.id || student._id,
         companyId,
       });

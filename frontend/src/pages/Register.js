@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config";
 function Register() {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,7 +28,7 @@ function Register() {
         skills: formData.skills.split(",").map((skill) => skill.trim()),
       };
 
-      const res = await axios.post("http://localhost:5000/api/students/register", payload);
+      const res = await axios.post(`${API_BASE_URL}/api/students/register`, payload);
       alert(res.data.message);
       navigate("/login");
     } catch (error) {

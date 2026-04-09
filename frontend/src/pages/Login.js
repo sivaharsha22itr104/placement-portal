@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config";
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
@@ -18,8 +18,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/students/login", formData);
-
+      const res = await axios.post(`${API_BASE_URL}/api/students/login`, formData);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("student", JSON.stringify(res.data.student));
 

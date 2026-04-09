@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../config";
 import {
   BarChart,
   Bar,
@@ -39,8 +40,7 @@ function AdminDashboard() {
 
   const fetchCompanies = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/companies");
-      setCompanies(res.data.companies || []);
+      const res = await axios.get(`${API_BASE_URL}/api/companies`);
     } catch (error) {
       console.error(error);
     }
@@ -48,7 +48,7 @@ function AdminDashboard() {
 
   const fetchApplications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/applications");
+      const res = await axios.get(`${API_BASE_URL}/api/companies`);
       setApplications(res.data.applications || []);
     } catch (error) {
       console.error(error);
@@ -72,7 +72,7 @@ function AdminDashboard() {
           .map((d) => d.trim()),
       };
 
-      await axios.post("http://localhost:5000/api/companies/add", payload);
+      await axios.post(`${API_BASE_URL}/api/companies/add`, payload);
 
       alert("Company added successfully");
 
@@ -94,10 +94,7 @@ function AdminDashboard() {
 
   const updateStatus = async (applicationId, status) => {
     try {
-      await axios.put(
-        `http://localhost:5000/api/applications/status/${applicationId}`,
-        { status }
-      );
+      await axios.put(`${API_BASE_URL}/api/applications/status/${applicationId}`, { status });
       fetchApplications();
     } catch (error) {
       alert("Error updating status");
