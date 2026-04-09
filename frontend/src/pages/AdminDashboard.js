@@ -19,7 +19,7 @@ import {
 function AdminDashboard() {
   const navigate = useNavigate();
 
-  const [companies, setCompanies] = useState([]);
+  const [companies] = useState([]);
   const [applications, setApplications] = useState([]);
 
   const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ function AdminDashboard() {
 
   const fetchCompanies = async () => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/api/companies`);
+      await axios.get(`${API_BASE_URL}/api/companies`);
     } catch (error) {
       console.error(error);
     }
